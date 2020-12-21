@@ -1,0 +1,10 @@
+<div
+  class="splash-screen-wrapper"
+  [ngStyle]="{ opacity: opacityChange, transition: splashTransition }"
+  *ngIf="showSplash"
+>
+  <div class="splash-screen-inner">
+    <div class="splash-screen-icon" style="background-image: url(assets/img/splash-screen-icon.svg);"></div>
+    <div class="splash-screen-logo" style="background-image: url(assets/img/splash-screen-logo.svg);"></div>
+  </div>
+</div>

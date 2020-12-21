@@ -1,0 +1,20 @@
+<div class="home-weather">
+  <div class="home-weather-average">
+    <div class="home-weather-average-date">
+      {{weather?.data[0].datetime | date: "MMMM d YYYY"}} -  {{weather?.data[weather?.data.length - 1].datetime | date: "MMMM d YYYY"}}
+    </div>
+    <div class="home-weather-average-temp">
+      {{averageTemp}} <p class="degree-symbol">&#176;{{fahrenheit ? 'F' : 'C'}}</p>
+    </div>
+  </div>
+  <div class="home-weather-week-wrapper">
+    <div *ngFor="let day of weather?.data.slice(0,7)" class="home-weather-week">
+      <div class="home-weather-week-date">
+        {{day.datetime | date: "EEEE"}}
+      </div>
+      <div class="home-weather-week-temp">
+        {{day.temp | number: "1.0-0"}} <p class="degree-symbol">&#176;{{fahrenheit ? 'F' : 'C'}}</p>
+      </div>
+    </div>
+  </div>
+</div>

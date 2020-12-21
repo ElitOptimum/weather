@@ -1,0 +1,81 @@
+
+.home-weather-average{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 48px 0;
+}
+
+.home-weather-average-date{
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0.06em;
+  color: #08153E;
+  opacity: 0.6;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+}
+
+.home-weather-average-temp{
+  font-weight: 600;
+  font-size: 120px;
+  line-height: 120px;
+  color: #FFFFFF;
+  position: relative;
+}
+
+.home-weather-week{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-weather-week-wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 12px;
+}
+
+.home-weather-average-temp .degree-symbol{
+  font-size: 32px;
+  line-height: unset;
+  position: absolute;
+  top: -32px;
+  right: -32px;
+}
+
+.home-weather-week-date{
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 24px;
+  color: #08153E;
+  opacity: 0.6;
+  text-transform: uppercase;
+
+}
+
+.home-weather-week-temp{
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  color: #FFFFFF;
+  position: relative;
+}
+
+.home-weather-week-temp .degree-symbol{
+  font-size: 14px;
+  line-height: 100%;
+  display: inline;
+  position: relative;
+  top: -8px;
+}
+
+@media screen and (min-width:768px){
+  .home-weather-week-wrapper{
+    grid-template-columns: repeat(7, 1fr);
+  }
+}

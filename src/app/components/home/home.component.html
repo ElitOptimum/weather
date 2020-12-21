@@ -1,0 +1,30 @@
+<div #homeWrapper class="home-wrapper">
+  <div class="home-inner">
+    <mat-slide-toggle class="home-slide-toggle" (change)="fahrenheit($event)">Fahrenheit</mat-slide-toggle>
+    <form class="home-form">
+      <div class="home-input-img" style="background-image: url(assets/img/splash-screen-icon.svg);"></div>
+      <div class="home-input-state-wrapper">
+        <mat-select name="selectedState" [(ngModel)]="selectedState">
+          <mat-select-trigger>
+            <div class="home-mat-select">
+              <img [src]="'assets/img/flags/' + selectedState.name.toLowerCase() +'.ico' " alt="">
+              <span class="home-mat-select-text">{{ selectedState.code }}</span>
+            </div>
+          </mat-select-trigger>
+          <mat-option *ngFor="let state of states" [value]="state">
+            <div class="home-mat-select">
+              <img [src]="'assets/img/flags/' + state.name.toLowerCase() +'.ico' " alt="">
+              <span class="home-mat-select-text">{{ state.code }}</span>
+            </div>
+          </mat-option>
+        </mat-select>
+      </div>
+      <div class="home-input-search-wrapper">
+        <input name="location" type="text" placeholder="Please enter your location..." [(ngModel)]="location">
+        <div class="home-input-search-img" style="background-image: url(assets/img/search-icon.svg);"
+          (click)="submit()"></div>
+      </div>
+    </form>
+    <app-weather-info [fahrenheit]="useFahrenheit" [weather]="weatherData" *ngIf="weatherData"></app-weather-info>
+  </div>
+</div>
